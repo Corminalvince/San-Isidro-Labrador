@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Display Baptismal Records</title>
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,900" rel="stylesheet" />
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+</head>
+
+<body id="page-top" class="sidebar-toggled">
+  <div id="wrapper">
+    <!-- Sidebar -->
+     <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion toggled" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+            <img src="logo/tubigonchurch.png" alt="Church Logo" style="width: 75px; height: auto; border-radius: 50%;">
+        </div>
+    </a>
+ <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+     <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+        
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+ <li class="nav-item active">
+                <a class="nav-link" href="search.html">
+                    <i class="fas fa-fw fa-search"></i>
+                    <span>Search</span></a>
+            </li>
+            
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+             <li class="nav-item active">
+                <a class="nav-link" href="display.html">
+                    <i class="fas fa-fw fa-list"></i>
+                    <span>Display Records</span></a>
+            </li>
+     <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+      <hr class="sidebar-divider d-none d-md-block">
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+    </ul>
+    <!-- End Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+          <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-gradient-success topbar mb-4 static-top shadow">
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                        <div class="sidebar-brand-icon">
+                            <h6 class="mb-0 text-white font-weight-bold text-uppercase">San Isidro Labrado Tubigon Church</h6>
+                        </div>
+                    </a>
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars text-white"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-white small font-weight-bold">Admin</span>
+                                <img class="img-profile rounded-circle border border-white" src="img/undraw_profile.svg">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <span class="font-weight-bold">Profile - Admin</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item d-flex align-items-center" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    <span class="font-weight-bold">Logout</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+        <!-- End Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid" style="background: url('bg/church_bg.png') center center / cover no-repeat; position: relative; z-index: 1; min-height: 100vh;">
+          <h1 class="h3 mb-4 text-gray-800">Display Baptismal Records</h1>
+
+          <div class="card shadow mb-4 ">
+            <div class="card-header py-3  bg-success">
+              <h6 class="m-0 font-weight-bold text-white">Baptismal Records List</h6>
+            </div>
+            <div class="card-body table-responsive bg-dark ">
+              <table class="table table-bordered table-hover text-white" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                  <tr>
+                    <th>#</th>
+                    <th>Child Name</th>
+                    <th>Parents</th>
+                    <th>Date of Baptism</th>
+                    <th>Godparents</th>
+                    <th>Minister</th>
+                     <th>Payment</th> 
+                  </tr>
+                </thead>
+                <tbody id="recordsTableBody">
+                  <!-- Rows inserted by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+     <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>@Copyright &copy; San Isidro Labrador Church 2025</span>
+                   <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you've purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+                    </div>
+                </div>
+            </footer>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+<script>
+  // Sample 20 baptismal records data
+  const sampleRecords = [
+    { child: "Juan Dela Cruz", parents: "Pedro & Maria Dela Cruz", date: "2020-01-15", godparents: "Carlos & Ana", minister: "Fr. Jose" },
+    { child: "Maria Santos", parents: "Jose & Lucia Santos", date: "2020-02-20", godparents: "Luis & Carmen", minister: "Fr. Miguel" },
+    { child: "Pedro Reyes", parents: "Ramon & Teresa Reyes", date: "2020-03-05", godparents: "Enrique & Rosa", minister: "Fr. John" },
+    { child: "Ana Dela Cruz", parents: "Pedro & Maria Dela Cruz", date: "2020-04-12", godparents: "Carlos & Ana", minister: "Fr. Jose" },
+    { child: "Jose Santos", parents: "Jose & Lucia Santos", date: "2020-05-23", godparents: "Luis & Carmen", minister: "Fr. Miguel" },
+    { child: "Luisa Gomez", parents: "Miguel & Sofia Gomez", date: "2020-06-15", godparents: "Raul & Elena", minister: "Fr. Paul" },
+    { child: "Carlos Mendoza", parents: "Victor & Alicia Mendoza", date: "2020-07-19", godparents: "Mario & Clara", minister: "Fr. John" },
+    { child: "Rosa Fernandez", parents: "Jose & Maria Fernandez", date: "2020-08-11", godparents: "Luis & Ana", minister: "Fr. Miguel" },
+    { child: "Luis Santos", parents: "Jose & Lucia Santos", date: "2020-09-07", godparents: "Carlos & Carmen", minister: "Fr. Paul" },
+    { child: "Elena Cruz", parents: "Pedro & Maria Cruz", date: "2020-10-01", godparents: "Enrique & Rosa", minister: "Fr. Jose" },
+    { child: "Miguel Ramirez", parents: "Juan & Teresa Ramirez", date: "2020-11-14", godparents: "Mario & Clara", minister: "Fr. John" },
+    { child: "Teresa Lopez", parents: "Carlos & Ana Lopez", date: "2020-12-25", godparents: "Raul & Elena", minister: "Fr. Paul" },
+    { child: "Ana Santos", parents: "Jose & Lucia Santos", date: "2021-01-15", godparents: "Luis & Carmen", minister: "Fr. Miguel" },
+    { child: "Pedro Gomez", parents: "Miguel & Sofia Gomez", date: "2021-02-20", godparents: "Carlos & Ana", minister: "Fr. Jose" },
+    { child: "Maria Mendoza", parents: "Victor & Alicia Mendoza", date: "2021-03-17", godparents: "Mario & Clara", minister: "Fr. John" },
+    { child: "Juan Fernandez", parents: "Jose & Maria Fernandez", date: "2021-04-22", godparents: "Luis & Ana", minister: "Fr. Paul" },
+    { child: "Carmen Santos", parents: "Jose & Lucia Santos", date: "2021-05-10", godparents: "Carlos & Carmen", minister: "Fr. Miguel" },
+    { child: "Clara Ramirez", parents: "Juan & Teresa Ramirez", date: "2021-06-14", godparents: "Enrique & Rosa", minister: "Fr. Jose" },
+    { child: "Raul Lopez", parents: "Carlos & Ana Lopez", date: "2021-07-08", godparents: "Raul & Elena", minister: "Fr. Paul" },
+    { child: "Elena Gomez", parents: "Miguel & Sofia Gomez", date: "2021-08-19", godparents: "Mario & Clara", minister: "Fr. John" },
+  ];
+
+  const paymentPerRecord = 300;
+  const tbody = document.getElementById("recordsTableBody");
+
+  sampleRecords.forEach((rec, idx) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${idx + 1}</td>
+      <td>${rec.child}</td>
+      <td>${rec.parents}</td>
+      <td>${rec.date}</td>
+      <td>${rec.godparents}</td>
+      <td>${rec.minister}</td>
+      <td>₱${paymentPerRecord.toLocaleString()}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const body = document.body;
+        const sidebar = document.getElementById("accordionSidebar");
+
+        sidebar.addEventListener("mouseenter", function () {
+            body.classList.remove("sidebar-toggled");
+            sidebar.classList.remove("toggled");
+        });
+
+        sidebar.addEventListener("mouseleave", function () {
+            body.classList.add("sidebar-toggled");
+            sidebar.classList.add("toggled");
+        });
+    });
+</script>
+</body>
+
+</html>
