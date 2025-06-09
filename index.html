@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>San Isidro Labrador Church - Search/Display Record</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700,900" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+    <ul class="navbar-nav bg-success sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        
+        <div class="sidebar-brand-icon">
+            <img src="logo/tubigonchurch.png" alt="Church Logo" style="width: 75px; height: auto; border-radius: 50%;">
+            
+        </div>
+        <div class="sidebar-brand-text mx-3">San Isidro Labrador</div>
+    </a>
+ <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+     <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Components</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="text-white-600 collapse-header">Components</h6>
+                <a class="text-white-600 collapse-item" href="search.html">Search</a>
+                <a class="text-white-600 collapse-item" href="display.html">Display Record</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+</ul>
+
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-success topbar mb-4 static-top shadow">
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-dark small">Admin</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="userDropdown">
+                               <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile - Admin
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Page Content -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Record Status</h1>
+                       <button id="generateReport" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm">
+    <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+</button>
+
+                    </div>
+
+                    <!-- Dashboard Row -->
+                    <div class="row">
+                        <!-- Baptismal Records -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Total Baptismal Records</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <span id="baptismalCount">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-baby fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Earnings (Total)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                ₱<span id="earnings">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-hand-holding-usd fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Approved Requests -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Approved Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <span id="approved">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Pending Requests</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                <span id="pending">0</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-hourglass-half fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Church History Section -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <h3 class="text-gray-800">History</h3>
+        <p>The church was founded by the Jesuits as a visita of Calape. When the Jesuits left in 1768, it was taken over by the Augustinian Recollects. Meanwhile, the town was created in 1819 from lands formerly belonging to Calape and Inabanga. Upon its declaration as a parish in 1852, it was placed under the advocation of St. Isidore the Laborer.</p>
+
+        <p>The exact date of the start of the construction of the church is uncertain. Fr. Felix Guillen, who was assigned between 1887 and 1893, was said to have continued its building works.</p>
+
+        <p>However, it was left incomplete when the Recollects left during the Philippine Revolution. The murals found in the interiors were created by artist Raymundo Francia from Cebu as late as the 1930s, around the same time that the bell tower was built.</p>
+
+        <p>The earthquake that occurred on November 15, 2013 destroyed the church. On May 25, 2018, restoration was completed and the church was reopened to the public.</p>
+
+        <h3 class="text-gray-800 mt-4">Heritage</h3>
+        <p>Tubigon Church was declared a heritage church by the National Historical Commission of the Philippines and a Level II historical marker was installed on March 5, 2015.</p>
+
+        <h3 class="text-gray-800 mt-4">Architecture</h3>
+        <p>A four-posted arc welcomes churchgoers to a ramp leading to the churchyard. It is decorated with a pair of columns in each of its four arches, finials, and pierced walls. In its apex is a lantern that resembles the arc on top of which is a holy figure.</p>
+
+        <p>The church’s facade is roughly divided by stone masonry in its lower portion and contiguous, clean wall. Six decorative columns arise from the pilasters that seem to function as their plinths, and they are each topped with winged images. The two innermost ones are in kneeling position and facing toward each other, the rest face the church grounds.</p>
+
+        <p>Entrance is through an arch portal decorated with pilasters and an ornamental gable-shaped molding. It is flanked by alcoves containing statues, blind semicircular sunken sections, and arch windows. The upper level of the facade is truncated to a shape of a broken gable; its innermost panels are pierced with arch windows. Its pediment is without decoration except for two blind round windows.</p>
+
+        <p>The quadrangular bell tower is found in the epistle side. It has a pair of arch openings in each side, corbelled balustrade, and finials. It is crowned with a pyramidal roof.</p>
+    </div>
+</div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; San Isidro Labrador Church 2025</span>
+                   <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you've purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal"><span>×</span></button>
+                </div>
+                <div class="modal-body">Select "Logout" below to end your session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- jsPDF and html2canvas CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <!-- JavaScript Includes -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Dashboard Update Script -->
+    <script>
+        // Sample dynamic data - Replace with API call or PHP echo
+        const dashboardData = {
+            baptismalCount: 20,
+            earnings: 6000,
+            approved: 20,
+            pending: 0
+        };
+
+        // Update DOM with values
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('baptismalCount').textContent = dashboardData.baptismalCount;
+            document.getElementById('earnings').textContent = dashboardData.earnings.toLocaleString();
+            document.getElementById('approved').textContent = dashboardData.approved;
+            document.getElementById('pending').textContent = dashboardData.pending;
+        });
+    </script>
+
+<script>
+  const sampleRecords = [
+   { child: "Juan Dela Cruz", parents: "Pedro & Maria Dela Cruz", date: "2020-01-15", godparents: "Carlos & Ana", minister: "Fr. Jose" },
+    { child: "Maria Santos", parents: "Jose & Lucia Santos", date: "2020-02-20", godparents: "Luis & Carmen", minister: "Fr. Miguel" },
+    { child: "Pedro Reyes", parents: "Ramon & Teresa Reyes", date: "2020-03-05", godparents: "Enrique & Rosa", minister: "Fr. John" },
+    { child: "Ana Dela Cruz", parents: "Pedro & Maria Dela Cruz", date: "2020-04-12", godparents: "Carlos & Ana", minister: "Fr. Jose" },
+    { child: "Jose Santos", parents: "Jose & Lucia Santos", date: "2020-05-23", godparents: "Luis & Carmen", minister: "Fr. Miguel" },
+    { child: "Luisa Gomez", parents: "Miguel & Sofia Gomez", date: "2020-06-15", godparents: "Raul & Elena", minister: "Fr. Paul" },
+    { child: "Carlos Mendoza", parents: "Victor & Alicia Mendoza", date: "2020-07-19", godparents: "Mario & Clara", minister: "Fr. John" },
+    { child: "Rosa Fernandez", parents: "Jose & Maria Fernandez", date: "2020-08-11", godparents: "Luis & Ana", minister: "Fr. Miguel" },
+    { child: "Luis Santos", parents: "Jose & Lucia Santos", date: "2020-09-07", godparents: "Carlos & Carmen", minister: "Fr. Paul" },
+    { child: "Elena Cruz", parents: "Pedro & Maria Cruz", date: "2020-10-01", godparents: "Enrique & Rosa", minister: "Fr. Jose" },
+    { child: "Miguel Ramirez", parents: "Juan & Teresa Ramirez", date: "2020-11-14", godparents: "Mario & Clara", minister: "Fr. John" },
+    { child: "Teresa Lopez", parents: "Carlos & Ana Lopez", date: "2020-12-25", godparents: "Raul & Elena", minister: "Fr. Paul" },
+    { child: "Ana Santos", parents: "Jose & Lucia Santos", date: "2021-01-15", godparents: "Luis & Carmen", minister: "Fr. Miguel" },
+    { child: "Pedro Gomez", parents: "Miguel & Sofia Gomez", date: "2021-02-20", godparents: "Carlos & Ana", minister: "Fr. Jose" },
+    { child: "Maria Mendoza", parents: "Victor & Alicia Mendoza", date: "2021-03-17", godparents: "Mario & Clara", minister: "Fr. John" },
+    { child: "Juan Fernandez", parents: "Jose & Maria Fernandez", date: "2021-04-22", godparents: "Luis & Ana", minister: "Fr. Paul" },
+    { child: "Carmen Santos", parents: "Jose & Lucia Santos", date: "2021-05-10", godparents: "Carlos & Carmen", minister: "Fr. Miguel" },
+    { child: "Clara Ramirez", parents: "Juan & Teresa Ramirez", date: "2021-06-14", godparents: "Enrique & Rosa", minister: "Fr. Jose" },
+    { child: "Raul Lopez", parents: "Carlos & Ana Lopez", date: "2021-07-08", godparents: "Raul & Elena", minister: "Fr. Paul" },
+    { child: "Elena Gomez", parents: "Miguel & Sofia Gomez", date: "2021-08-19", godparents: "Mario & Clara", minister: "Fr. John" },
+    // ... rest of 20 records
+  ];
+
+  const paymentPerRecord = 300;
+
+  document.getElementById("generateReport").addEventListener("click", () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFontSize(16);
+    doc.text("San Isidro Labrador Church", 105, 15, null, null, "center");
+    doc.setFontSize(12);
+    doc.text("Baptismal Records Report", 105, 25, null, null, "center");
+// Add Record Status here, aligned left:
+doc.setFontSize(10);
+doc.text("Record Status: Sample Data", 10, 30);
+    let startY = 40;
+    doc.setFontSize(10);
+    doc.text("Child", 10, startY);
+    doc.text("Parents", 45, startY);
+    doc.text("Date", 95, startY);
+    doc.text("Godparents", 125, startY);
+    doc.text("Minister", 170, startY);
+
+    startY += 6;
+
+    sampleRecords.forEach((rec, i) => {
+      doc.text(rec.child, 10, startY);
+      doc.text(rec.parents, 45, startY);
+      doc.text(rec.date, 95, startY);
+      doc.text(rec.godparents, 125, startY);
+      doc.text(rec.minister, 170, startY);
+      startY += 6;
+
+      if (startY > 280) {
+        doc.addPage();
+        startY = 20;
+      }
+    });
+
+    const totalEarnings = sampleRecords.length * paymentPerRecord;
+    doc.text(`\nTotal Records: ${sampleRecords.length}`, 10, startY + 10);
+    doc.text(`\nTotal Earnings: ₱ ${totalEarnings.toLocaleString()}`, 10, startY + 16);
+
+    doc.save("Baptismal_Report.pdf");
+  });
+</script>
+
+</body>
+</html>
